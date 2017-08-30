@@ -1,15 +1,20 @@
 package com.hc.atg.pep.mock;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class MockApplication extends SpringBootServletInitializer{
+public class MockApplication  extends SpringBootServletInitializer{
+
 
     public static void main(String[] args) {
-        new MockApplication()
-                .configure(new SpringApplicationBuilder(MockApplication.class))
-                .run(args);
+        SpringApplication.run(MockApplication.class, args);
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(MockApplication.class);
     }
 }
