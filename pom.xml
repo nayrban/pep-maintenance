@@ -20,7 +20,8 @@
 		<java.version>1.8</java.version>
 	</properties>
 	<modules>
-	
+
+		<module>mock-microservice</module>
 	</modules>
 	<!-- No dependencies - otherwise the samples won't work if you change the
 		parent -->
