@@ -12,6 +12,7 @@
       </div>
       <div class="navbar-right-menu">
         <ul class="nav navbar-nav navbar-right">
+          <!--
           <li class="open" style="display:inline-block;">
             <a href="#" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
               <i class="ti-panel"></i>
@@ -25,13 +26,22 @@
              <li><a href="#">Notification 4</a></li>
              <li><a href="#">Another notification</a></li>
            </drop-down>
-          <li style="display:inline-block;">
+           -->
+          <li style="display:inline-block;" v-if="isLoggedIn">
             <a href="#" class="btn-rotate">
               <i class="ti-settings"></i>
               <p>
                 Settings
               </p>
             </a>
+          </li>
+          <li style="display:inline-block;" v-if="isLoggedIn">
+              <router-link to="/logout" class="btn-rotate">
+                <i class="ti-lock"></i>
+                <p>
+                  Logout
+                </p>
+              </router-link>
           </li>
         </ul>
       </div>

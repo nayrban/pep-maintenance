@@ -4,6 +4,12 @@ export default {
     routeName () {
       const {name} = this.$route
       return this.capitalizeFirstLetter(name)
+    },
+    isLoggedIn () {
+      return this.$store.getters.isLoggedIn
+    },
+    canAccessApp (appName) {
+      return this.$store.getters.canAccessApp(appName)
     }
   },
   data () {

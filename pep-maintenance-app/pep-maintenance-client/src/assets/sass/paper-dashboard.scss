@@ -26,7 +26,6 @@
 @import "paper/checkbox-radio";
 @import "paper/navbars";
 @import "paper/footers";
-@import "paper/tabs-component";
 
 
 // Fancy Stuff
@@ -37,6 +36,8 @@
 
 // Orphaned styles that were buried in the .vue files
 @import "paper/styles";
+
+@import "app";
 
 
 
