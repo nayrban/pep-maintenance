@@ -1,0 +1,32 @@
+<div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <app-header :heading="heading.title" :icon="heading.icon" :description="heading.description"></app-header>
+          <div class="app-container">
+            <form @submit.prevent="login({ email, password })">
+                <div class="row">
+                    <div class="col-md-6">
+                      <fg-input type="text"
+                                label="Username"
+                                placeholder="Username"
+                                v-model="username">
+                      </fg-input>
+                    </div>
+                    <div class="col-md-6">
+                      <fg-input type="password"
+                                label="Password"
+                                placeholder="Password"
+                                v-model="password">
+                      </fg-input>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-info btn-fill btn-wd">
+                    Login
+                  </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

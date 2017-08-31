@@ -3,3 +3,6 @@ spring:
     name: mock-microservice
   jmx:
     default-domain: mock-microservice
+server:
+  port: 8589
+  contextPath: /

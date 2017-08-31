@@ -1,0 +1,105 @@
+<div>
+  <div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card" style="padding:2rem;">
+          <div class="row">
+            <div class="col-sm-1 icon-big text-center">
+              <i class="fa fa-info-circle primary" aria-hidden="true"></i>
+            </div>
+            <div class="col-sm-11">
+              <h4 style="margin:0">Harland Clark Front End Developers</h4>
+              <p>Before you get started, please review the code base. This dashboard is based on the <a href="https://github.com/cristijora/vue-paper-dashboard" target="_blank" >Vue Paper Dashboard</a>. In particular, please review the following:</p>
+              <ul>
+                <li><strong>src/globalComponents.js</strong> - Understand how components are made global to the application. If you find yourself duplicating a block of code, it should probably be a component. Global components should not have strong coupling to data, make them flexible.</li>
+                <li><strong>src/globalDirectives.js</strong> - Look for opportunities to create globally accessible directives for validation and other uses.</li>
+                <li><strong>src/components/Dashboard/Views</strong> - Location for the bulk of the application components will live. Segment functionality into specific folders.</li>
+                <li><strong><a href="https://internalteams.hchgrp.com/ss/pepm/psg/atg-ps/Documentation%20and%20Reference%20Information/Forms/AllItems.aspx?RootFolder=%2Fss%2Fpepm%2Fpsg%2Fatg-ps%2FDocumentation%20and%20Reference%20Information%2FLiberty%20%20Documentation%20and%20Reference%20Materials%20%28Existing%20Systems%29%2FLiberty%20Maintenance%20Apps%20Documentation&FolderCTID=0x0120009908226270F7A44381D75586F229CCF2&View=%7B33F2CD68-A21E-46CC-8865-7FB7B07BE7F9%7D" target="_blank">Maintenance App Docs on Sharepoint</a></strong> - <strong>Must be on the HC network to view</strong> - Breakdown of the applications</li>
+              </ul>
+              <div class="alert-info" style="padding: 1rem 2rem;border-radius:.4rem;margin-top:2rem;">
+                <h4 style="margin:.5rem 0">Github - We will be using formal <u>pull requests</u>.</h4>
+                <p>All development work should be done in a separate branch and a formal pull request needs to be made to integrate into master.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Stats cards-->
+    <div class="row">
+      <div class="col-lg-3 col-sm-6" v-for="stats in statsCards">
+        <stats-card>
+          <div class="icon-big text-center" :class="`icon-${stats.type}`" slot="header">
+            <i :class="stats.icon"></i>
+          </div>
+          <div class="numbers" slot="content">
+            <p>{{stats.title}}</p>
+            {{stats.value}}
+          </div>
+          <div class="stats" slot="footer">
+            <i :class="stats.footerIcon"></i> {{stats.footerText}}
+          </div>
+        </stats-card>
+      </div>
+    </div>
+
+    <!--Charts-->
+    <div class="row">
+
+      <div class="col-xs-12">
+        <chart-card :chart-data="usersChart.data" :chart-options="usersChart.options">
+          <h4 class="title" slot="title">Users behavior</h4>
+          <span slot="subTitle"> 24 Hours performance</span>
+          <span slot="footer">
+            <i class="ti-reload"></i> Updated 3 minutes ago</span>
+          <div slot="legend">
+            <i class="fa fa-circle text-info"></i> Open
+            <i class="fa fa-circle text-danger"></i> Click
+            <i class="fa fa-circle text-warning"></i> Click Second Time
+          </div>
+        </chart-card>
+      </div>
+
+      <div class="col-md-6 col-xs-12">
+        <chart-card :chart-data="preferencesChart.data"  chart-type="Pie">
+          <h4 class="title" slot="title">Email Statistics</h4>
+          <span slot="subTitle"> Last campaign performance</span>
+          <span slot="footer">
+            <i class="ti-timer"></i> Campaign set 2 days ago</span>
+          <div slot="legend">
+            <i class="fa fa-circle text-info"></i> Open
+            <i class="fa fa-circle text-danger"></i> Bounce
+            <i class="fa fa-circle text-warning"></i> Unsubscribe
+          </div>
+        </chart-card>
+      </div>
+
+      <div class="col-md-6 col-xs-12">
+        <chart-card :chart-data="activityChart.data" :chart-options="activityChart.options">
+          <h4 class="title" slot="title">2015 Sales</h4>
+          <span slot="subTitle"> All products including Taxes</span>
+          <span slot="footer">
+            <i class="ti-check"></i> Data information certified</span>
+          <div slot="legend">
+            <i class="fa fa-circle text-info"></i> Tesla Model S
+            <i class="fa fa-circle text-warning"></i> BMW 5 Series
+          </div>
+        </chart-card>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<script>
+
+  export default {
+
+  }
+
+</script>
+<style>
+
+</style>
